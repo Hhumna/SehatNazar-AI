@@ -10,7 +10,7 @@ export default {
     card:'#FFFFFF', lav:'#F5F0FF', bg:'#FBF7FF',
   },
   grad: {
-    brand:  ['#9B7BF0','#FF8FC0'],
+    brand:  ['#C9B6FF','#FF8FC0'],
     alert:  ['#FF9AAA','#FF5E78'],
     watch:  ['#FFE0A6','#FFB43D'],
     safe:   ['#B6F1DF','#5FD2AF'],
@@ -20,11 +20,11 @@ export default {
     mint:   ['#9DEBD3','#4FC9A6'],
     butter: ['#FFE1A0','#FFB93D'],
   },
-  radius: { sm:14, md:18, lg:22, xl:26, pill:999 },
+  radius: { sm:8, md:12, lg:16, xl:24, pill:9999 },
   space:  { xs:6, sm:10, md:14, lg:18, xl:24 },
   // soft coloured shadow — use this everywhere instead of raw shadow props
   shadow: {
-    shadowColor:'#7850C8', shadowOpacity:0.13, shadowRadius:14,
-    shadowOffset:{ width:0, height:8 }, elevation:4,
+    shadowColor:'#9B7BF0', shadowOpacity:0.08, shadowRadius:20,
+    shadowOffset:{ width:0, height:4 }, elevation:4,
   },
 };

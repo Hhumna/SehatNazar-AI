@@ -69,7 +69,7 @@ export default function ProfileScreen() {
       <T style={{ width: 100, fontSize: 13, color: theme.color.ink3, textAlign: isUrdu ? 'right' : 'left' }}>{label}</T>
       {editable ? (
         <TextInput
-          style={{ flex: 1, fontSize: 15, color: theme.color.ink, fontWeight: '500', textAlign: isUrdu ? 'right' : 'left', padding: 0 }}
+          style={{ flex: 1, fontSize: 15, color: theme.color.ink, fontWeight: '500', textAlign: isUrdu ? 'right' : 'left', paddingVertical: 8, paddingHorizontal: 12, backgroundColor: theme.color.bg, borderRadius: 8, borderWidth: 1, borderColor: theme.color.lav }}
           value={value}
           onChangeText={onChange}
         />
@@ -114,17 +114,17 @@ export default function ProfileScreen() {
         </View>
         
         <View style={{ flexDirection: rowDir, gap: 12 }}>
-          <View style={{ flex: 1, backgroundColor: '#F7F7FA', borderRadius: 16, padding: 16, alignItems: 'center' }}>
+          <View style={{ flex: 1, backgroundColor: theme.color.card, borderRadius: 16, padding: 16, alignItems: 'center', ...theme.shadow }}>
             <T style={{ fontSize: 24, fontWeight: '700', color: theme.color.brand }}>{stats.total}</T>
             <T style={{ fontSize: 11, color: theme.color.ink3, marginTop: 4 }}>{t('total_cases')}</T>
           </View>
-          <View style={{ flex: 1, backgroundColor: '#F7F7FA', borderRadius: 16, padding: 16, alignItems: 'center' }}>
+          <View style={{ flex: 1, backgroundColor: theme.color.card, borderRadius: 16, padding: 16, alignItems: 'center', ...theme.shadow }}>
             <T style={{ fontSize: 24, fontWeight: '700', color: theme.color.lavD }}>{stats.pending}</T>
             <T style={{ fontSize: 11, color: theme.color.ink3, marginTop: 4 }}>{t('pending')}</T>
           </View>
         </View>
 
-        <TouchableOpacity onPress={toggleLang} style={{ marginTop: 32, alignItems: 'center', padding: 16, backgroundColor: theme.color.lav, borderRadius: 12 }}>
+        <TouchableOpacity onPress={toggleLang} style={{ marginTop: 32, alignItems: 'center', padding: 16, backgroundColor: theme.color.lav, borderRadius: theme.radius.pill }}>
           <T style={{ fontSize: 15, fontWeight: '700', color: theme.color.brand }}>
             {isUrdu ? 'Switch to English' : 'اردو میں تبدیل کریں'}
           </T>

@@ -13,7 +13,7 @@ SehatNazar is an offline-first, early-warning mobile application designed for La
 ## Tech Stack
 
 - **Framework**: React Native (Expo Router)
-- **Styling**: Custom Design System (`constants/theme.js`)
+- **Styling**: Luminous Soft-Modern Design System (Pastel gradients, Glassmorphism, ambient shadows in `constants/theme.js`)
 - **Storage**: AsyncStorage
 - **Cryptography**: Expo Crypto
 - **Icons**: Expo Vector Icons (Ionicons)

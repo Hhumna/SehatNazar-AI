@@ -87,14 +87,14 @@ export default function ResetScreen() {
   };
 
   const inputStyle = {
-    backgroundColor: '#F7F7FA',
-    borderRadius: 14,
+    backgroundColor: theme.color.bg,
+    borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 14,
     fontSize: 16,
     color: theme.color.ink,
     borderWidth: 1,
-    borderColor: '#E5E5EA',
+    borderColor: theme.color.lav,
     textAlign: isUrdu ? 'right' : 'left'
   };
 
@@ -124,7 +124,7 @@ export default function ResetScreen() {
               </Field>
 
               <TouchableOpacity onPress={handleSendCode} disabled={submitting} style={{ marginTop: 10, marginBottom: 30 }}>
-                <LinearGradient colors={theme.grad.brand} style={{ paddingVertical: 16, borderRadius: 14, alignItems: 'center' }}>
+                <LinearGradient colors={theme.grad.brand} style={{ paddingVertical: 16, borderRadius: theme.radius.pill, alignItems: 'center' }}>
                   <T style={{ fontSize: 17, fontWeight: '700', color: '#FFF' }}>{t('next')}</T>
                 </LinearGradient>
               </TouchableOpacity>
@@ -149,7 +149,7 @@ export default function ResetScreen() {
               </View>
 
               <TouchableOpacity onPress={handleReset} disabled={submitting} style={{ marginTop: 10, marginBottom: 40 }}>
-                <LinearGradient colors={theme.grad.brand} style={{ paddingVertical: 16, borderRadius: 14, alignItems: 'center' }}>
+                <LinearGradient colors={theme.grad.brand} style={{ paddingVertical: 16, borderRadius: theme.radius.pill, alignItems: 'center' }}>
                   <T style={{ fontSize: 17, fontWeight: '700', color: '#FFF' }}>{t('save')}</T>
                 </LinearGradient>
               </TouchableOpacity>

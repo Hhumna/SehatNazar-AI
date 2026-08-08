@@ -1,10 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import theme from '../constants/theme';
 import T from './T';
 
 export default function Chip({ label, sub, colors, ghost }) {
+  // Extract primary color from gradient array or default to lilacD
+  const baseColor = colors ? colors[1] : theme.color.lilacD;
+
   if (ghost) {
     return (
       <View style={{
@@ -13,7 +15,7 @@ export default function Chip({ label, sub, colors, ghost }) {
         paddingVertical: theme.space.sm,
         backgroundColor: theme.color.card,
         borderWidth: 1,
-        borderColor: theme.color.lilac,
+        borderColor: baseColor,
         borderStyle: 'dashed',
         alignItems: 'center',
         justifyContent: 'center',
@@ -24,21 +26,20 @@ export default function Chip({ label, sub, colors, ghost }) {
     );
   }
 
+  // 10% opacity hex = 1A
+  const rgbaColor = baseColor + '1A';
+
   return (
-    <LinearGradient
-      colors={colors || theme.grad.lilac}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={{
-        borderRadius: theme.radius.pill,
-        paddingHorizontal: theme.space.lg,
-        paddingVertical: theme.space.sm,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <T style={{ color: '#FFFFFF', fontWeight: '700', fontSize: 14 }}>{label}</T>
-      {sub && <T style={{ color: 'rgba(255,255,255,0.8)', fontWeight: '500', fontSize: 10 }}>{sub}</T>}
-    </LinearGradient>
+    <View style={{
+      borderRadius: theme.radius.pill,
+      paddingHorizontal: theme.space.lg,
+      paddingVertical: theme.space.sm,
+      backgroundColor: rgbaColor,
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+      <T style={{ color: baseColor, fontWeight: '700', fontSize: 14 }}>{label}</T>
+      {sub && <T style={{ color: baseColor, opacity: 0.8, fontWeight: '500', fontSize: 10 }}>{sub}</T>}
+    </View>
   );
 }

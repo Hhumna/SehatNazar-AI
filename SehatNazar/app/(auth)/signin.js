@@ -76,14 +76,14 @@ export default function SignInScreen() {
   };
 
   const inputStyle = {
-    backgroundColor: '#F7F7FA',
-    borderRadius: 14,
+    backgroundColor: theme.color.bg,
+    borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 14,
     fontSize: 16,
     color: theme.color.ink,
     borderWidth: 1,
-    borderColor: '#E5E5EA',
+    borderColor: theme.color.lav,
     textAlign: isUrdu ? 'right' : 'left'
   };
 
@@ -121,10 +121,10 @@ export default function SignInScreen() {
                   style={{
                     flex: 1,
                     height: 56,
-                    borderRadius: 14,
-                    backgroundColor: '#F7F7FA',
+                    borderRadius: 8,
+                    backgroundColor: theme.color.bg,
                     borderWidth: 1,
-                    borderColor: '#E5E5EA',
+                    borderColor: theme.color.lav,
                     fontSize: 24,
                     fontWeight: '700',
                     textAlign: 'center',
@@ -145,7 +145,7 @@ export default function SignInScreen() {
           {error ? <T style={{ fontSize: 13, color: theme.color.coralD, marginBottom: 16, textAlign: 'center' }}>{error}</T> : null}
 
           <TouchableOpacity onPress={handleSignIn} disabled={submitting} style={{ marginBottom: 24 }}>
-            <LinearGradient colors={theme.grad.brand} style={{ paddingVertical: 16, borderRadius: 14, alignItems: 'center' }}>
+            <LinearGradient colors={theme.grad.brand} style={{ paddingVertical: 16, borderRadius: theme.radius.pill, alignItems: 'center' }}>
               <T style={{ fontSize: 17, fontWeight: '700', color: '#FFF' }}>{t('sign_in')}</T>
             </LinearGradient>
           </TouchableOpacity>
