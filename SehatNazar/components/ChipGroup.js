@@ -11,7 +11,7 @@ export default function ChipGroup({ options, selected, onToggle, multi, grad }) 
         const isObj = typeof opt === 'object';
         const id = isObj ? opt.id : opt;
         const label = isObj ? opt.label : opt;
-        const itemGrad = isObj ? theme.grad[opt.grad] : (grad ? theme.grad[grad] : theme.grad.brand);
+        const itemGrad = (isObj && opt.grad) ? theme.grad[opt.grad] : (grad ? theme.grad[grad] : theme.grad.brand);
 
         const isSelected = multi ? selected.includes(id) : selected === id;
 
