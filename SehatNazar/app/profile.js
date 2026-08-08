@@ -83,7 +83,7 @@ export default function ProfileScreen() {
     <View style={{ flex: 1, backgroundColor: theme.color.bg }}>
       <LinearGradient colors={theme.grad.lilac} start={{x:0,y:0}} end={{x:1,y:1}} style={{ paddingTop: Platform.OS === 'ios' ? 50 : 30, paddingBottom: 24, paddingHorizontal: 20 }}>
         <View style={{ flexDirection: rowDir, justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <TouchableOpacity onPress={() => router.back()} style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.5)', alignItems: 'center', justifyContent: 'center' }}>
+          <TouchableOpacity onPress={() => router.canGoBack() ? router.back() : router.replace('/(tabs)')} style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.5)', alignItems: 'center', justifyContent: 'center' }}>
             <Ionicons name={isUrdu ? "chevron-forward" : "chevron-back"} size={24} color={theme.color.brand} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => editing ? handleSave() : setEditing(true)}>

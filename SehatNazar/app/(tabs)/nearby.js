@@ -124,7 +124,7 @@ export default function NearbyScreen() {
         <View style={{ flexDirection: rowDir, alignItems: 'center', paddingHorizontal: 20, paddingTop: 8, paddingBottom: 6 }}>
           <TouchableOpacity 
             activeOpacity={0.7}
-            onPress={() => router.back()}
+            onPress={() => router.canGoBack() ? router.back() : router.replace('/(tabs)')}
             style={{
               width: 38,
               height: 38,

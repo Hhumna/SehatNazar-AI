@@ -129,7 +129,7 @@ export default function ResetScreen() {
                 </LinearGradient>
               </TouchableOpacity>
               
-              <TouchableOpacity onPress={() => router.back()} style={{ alignItems: 'center', marginBottom: 40 }}>
+              <TouchableOpacity onPress={() => router.canGoBack() ? router.back() : router.replace('/(auth)/signin')} style={{ alignItems: 'center', marginBottom: 40 }}>
                 <T style={{ fontSize: 14, fontWeight: '600', color: theme.color.brand }}>{t('cancel')}</T>
               </TouchableOpacity>
             </>
