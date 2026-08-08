@@ -357,10 +357,14 @@ export function LanguageProvider({ children }) {
   const font = isUrdu ? 'NotoNaskhArabic_400Regular' : undefined;
   const dir = isUrdu ? 'rtl' : 'ltr';
 
+  const toggleLang = useCallback(() => {
+    setLang(lang === 'ur' ? 'en' : 'ur');
+  }, [lang, setLang]);
+
   if (!isLoaded) return null;
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t, isUrdu, font, dir }}>
+    <LanguageContext.Provider value={{ lang, setLang, toggleLang, t, isUrdu, font, dir }}>
       {children}
     </LanguageContext.Provider>
   );
